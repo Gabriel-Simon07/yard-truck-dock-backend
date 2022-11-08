@@ -10,7 +10,6 @@ public class InformPlateValidator {
 		if(plateLetters(plate) == false || plateNumbers(plate) == false) {
 			return false;
 		}
-		
 		return true;
 	}
 

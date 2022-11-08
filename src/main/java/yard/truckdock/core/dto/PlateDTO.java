@@ -11,6 +11,10 @@ public class PlateDTO implements Serializable {
 	private Long id;
 	private String plate;
 
+
+	public PlateDTO() {
+	}
+
 	public PlateDTO(Long id, String plate) {
 		this.id = id;
 		this.plate = plate;
@@ -19,9 +23,6 @@ public class PlateDTO implements Serializable {
 	public PlateDTO(Plate plate) {
 		this.id = plate.getId();
 		this.plate = plate.getPlate();
-	}
-
-	public PlateDTO() {
 	}
 
 	public String getPlate() {

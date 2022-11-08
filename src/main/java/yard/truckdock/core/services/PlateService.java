@@ -18,11 +18,9 @@ public class PlateService {
 	@Transactional
 	public PlateDTO insert(PlateDTO dto) throws Exception {
 		Plate entityPlate = new Plate();
-		
 		if(InformPlateValidator.validPlate(dto.getPlate()) == false) {
-			throw new Exception("Placa informada está incorreta!");
+			throw new Exception("Informed plate is incorrect!");
 		}
-			
 		entityPlate.setPlate(dto.getPlate());
 		entityPlate = plateRepository.save(entityPlate);
 		return new PlateDTO(entityPlate);
