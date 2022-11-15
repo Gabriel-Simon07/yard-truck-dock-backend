@@ -12,4 +12,16 @@ public class InformPlateValidatorTest {
         final var valor= InformPlateValidator.validPlate("abgh256");
         assertFalse(valor);
     }
+
+    @Test
+    public void plateShouldReturnFalseWhyPlateHasFiveNumbers() {
+        final var valor= InformPlateValidator.validPlate("ab22256");
+        assertFalse(valor);
+    }
+
+    @Test
+    public void plateShouldReturnTrueWhyPlateIsValid() {
+        final var valor= InformPlateValidator.validPlate("bgh2536");
+        assertTrue(valor);
+    }
 }
