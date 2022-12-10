@@ -18,6 +18,11 @@ public class PlateService {
 	@Transactional
 	public PlateDTO insert(PlateDTO dto) throws Exception {
 		Plate entityPlate = new Plate();
+		final var value = plateRepository.findById(dto.getId());
+		if(dto.getPlate().equals(value)) {
+			throw new Exception("Informed plate exists!");
+		}
+
 		if(!InformPlateValidator.validPlate(dto.getPlate())) {
 			throw new Exception("Informed plate is incorrect!");
 		}
