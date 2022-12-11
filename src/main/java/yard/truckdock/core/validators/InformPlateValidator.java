@@ -1,5 +1,7 @@
 package yard.truckdock.core.validators;
 
+import java.util.Locale;
+
 public class InformPlateValidator {
 
 	public static boolean validPlate(String plate) {
